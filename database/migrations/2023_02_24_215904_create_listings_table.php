@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('location');
             $table->string('email');
             $table->string('website');
+            $table->string('logo')->nullable();
             $table->longText('description');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
